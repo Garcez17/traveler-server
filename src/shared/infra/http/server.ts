@@ -1,4 +1,8 @@
 import express from 'express';
+import 'reflect-metadata';
+import 'express-async-errors';
+
+import '@shared/infra/typeorm';
 
 const app = express();
 
