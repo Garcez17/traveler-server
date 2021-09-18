@@ -1,11 +1,14 @@
 import { container } from 'tsyringe';
 
+import './providers';
 import { UsersRepository } from '@modules/users/infra/typeorm/repositories/UsersRepository';
 import { IUsersRepository } from '@modules/users/repositories/IUsersRepository';
 
-import './providers';
 import { ICategoriesRepository } from '@modules/categories/repositories/ICategoriesRepository';
 import { CategoriesRepository } from '@modules/categories/infra/typeorm/repositories/CategoriesRepository';
+
+import { ICitiesRepository } from '@modules/cities/repositories/ICitiesRepository';
+import { CitiesRepository } from '@modules/cities/infra/typeorm/repositories/CitiesRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
@@ -15,4 +18,9 @@ container.registerSingleton<IUsersRepository>(
 container.registerSingleton<ICategoriesRepository>(
   'CategoriesRepository',
   CategoriesRepository,
+);
+
+container.registerSingleton<ICitiesRepository>(
+  'CitiesRepository',
+  CitiesRepository,
 );

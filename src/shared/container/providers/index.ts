@@ -1,1 +1,2 @@
 import './hashProvider';
+import './StorageProvider';

@@ -10,6 +10,16 @@ const usersRouter = Router();
 
 usersRouter.use('/session', sessionsRouter);
 
+usersRouter.get(
+  '/:id',
+  celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+  }),
+  usersController.show,
+);
+
 usersRouter.post(
   '/',
   celebrate({
