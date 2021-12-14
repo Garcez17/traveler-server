@@ -10,6 +10,10 @@ class CitiesRepository implements ICitiesRepository {
     this.ormRepository = getRepository(City);
   }
 
+  public async findById(id: string): Promise<City | undefined> {
+    return this.ormRepository.findOne(id);
+  }
+
   public async create(data: ICreateCitiesDTO): Promise<City> {
     const city = this.ormRepository.create(data);
 

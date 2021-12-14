@@ -30,7 +30,7 @@ class Place {
   @Column()
   category_id: string;
 
-  @OneToOne(() => Address)
+  @OneToOne(() => Address, { eager: true })
   @JoinColumn({ name: 'address_id' })
   address: Address;
 
