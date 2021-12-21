@@ -7,6 +7,8 @@ const categoriesController = new CategoriesController();
 
 const categoriesRouter = Router();
 
+categoriesRouter.get('/', categoriesController.index);
+
 categoriesRouter.post(
   '/',
   celebrate({
